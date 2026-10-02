@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        git branch: 'main', url: 'https://github.com/madhan-lab/Jenkins-Zero-To-Hero.git'
+        //git branch: 'main', url: 'https://github.com/madhan-lab/Jenkins-Zero-To-Hero.git'
       }
     }
     stage('Build and Test') {
@@ -57,6 +57,16 @@ pipeline {
             }
         }
       }
+    }
+    stage('Update Deployment File') {
+      steps {
+        sh '''
+        pwd
+        ls -la
+        git --version
+        git rev-parse --show-toplevel
+        '''
+        }
     }
     stage('Update Deployment File') {
         environment {
