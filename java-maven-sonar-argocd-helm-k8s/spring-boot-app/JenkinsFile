@@ -8,13 +8,13 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'echo passed successfully!!!!!'
+        sh 'echo passed'
         //git branch: 'main', url: 'https://github.com/madhan-lab/Jenkins-Zero-To-Hero.git'
       }
     }
     stage('Build and Test') {
       steps {
-        sh 'ls -ltr'
+        sh 'ls -ltrh'
         // build the project and create a JAR file
         sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
       }
