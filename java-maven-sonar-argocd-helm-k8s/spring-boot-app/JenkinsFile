@@ -61,6 +61,7 @@ pipeline {
     stage('Version check') {
       steps {
         sh '''
+        git config --global --add safe.directory $(pwd)
         pwd
         ls -la
         git --version
