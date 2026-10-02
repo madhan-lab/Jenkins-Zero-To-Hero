@@ -58,7 +58,7 @@ pipeline {
         }
       }
     }
-    stage('Update Deployment File') {
+    stage('Version check') {
       steps {
         sh '''
         pwd
